@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>ToDo List</title>
+</head>
+<header>
+    <%- include("partials/header.ejs"); %>
+</header>
+
+<body>
+<div class="box" id="heading">
+    <h1>Work List</h1>
+</div>
+
+<div class="box">
+    <% tasks.forEach((task)=> { %>
+            <div class="item">
+                <input type="checkbox">
+              <p><%= task %></p>
+            </div>
+            <%}) %>
+<form class="item" action="/work" method="POST">
+<input type="text" name="newItem" placeholder="New Item">
+<button type="submit" name="list"></button>
+</form>
+</div>
+
+
+</body>
+<%- include("partials/footer.ejs")%>
+
+</html>
+
+
+
